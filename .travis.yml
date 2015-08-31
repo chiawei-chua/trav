@@ -14,5 +14,9 @@ before_install:
   - gem update --system
   - gem --version
 
+test:
+  <<: *default
+  database: TravComList_test
+
 before_script:
-  - cp config/database.yml.travis config/database.yml
+
