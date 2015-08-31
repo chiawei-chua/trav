@@ -8,7 +8,7 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", listings_path
     
     get listings_path
-    assert_template 'listings/listings'
+    assert_template 'listings/index'
     assert_select "a[href=?]", root_path
     assert_select "a[href=?]", listings_path
   end

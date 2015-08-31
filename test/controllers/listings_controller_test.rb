@@ -8,7 +8,7 @@ class ListingsControllerTest < ActionController::TestCase
   end
 
   test "should get listings" do
-    get :listings
+    get :index
     assert_response :success
     assert_select "title", "Listings | #{@base_title}"
   end
