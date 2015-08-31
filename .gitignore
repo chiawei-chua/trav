@@ -13,6 +13,3 @@
 /tmp
 Rails README
 
-
-# Prevent Travis Deployment build
-Gemfile.lock
