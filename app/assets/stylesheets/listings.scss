@@ -152,30 +152,61 @@ div.col.sidebar-right {
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0,0,0,0.4);
   width: 100%;
   height: 100%;
   z-index: 10;
-  padding-top: 100px;
+  padding-top: 80px;
 }
 
-.listing-overlay .content-wrapper {
-  padding: 0 10% 5% 10%;
-  height: 100%;
+.listing-overlay .content {
+  position: relative;
+  min-width: 400px;
+  max-width: 450px;
 }
 
-.listing-overlay .content-wrapper .content {
+.listing-overlay .content .dura, 
+.listing-overlay .content .price {
+  text-align: center;
+}
+
+.listing-overlay .content .card,
+.listing-overlay .content .card .card-content {
+  height: auto;
+}
+
+.listing-overlay .card .card-content {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.listing-overlay .card .card-content p {
+  margin: 15px auto;
+}
+
+.listing-overlay .content .card .card-action {
+  position: relative;
+}
+
+.listing-overlay .content .card .card-action a {
+  color: $theme_color;
+}
+
+.close {
+  position: absolute;
   background: white;
-  height: 100%;
-  width: 100%;
-  min-width: 380px;
-  min-height: 550px;
+  border: 5px solid $theme_color;
+  border-radius: 50%;
+  cursor: pointer;
+  right: -12px;
+  top: -12px;
+  z-index: 10;
 }
 
-@media screen and (max-width: $mobile) {
-  .listing-overlay .content-wrapper {
-    padding: 0 3% 3% 3%;
-  }
+.close i {
+  width: 20px;
+  text-align: center;
+  color: $theme_color;
 }
 
 

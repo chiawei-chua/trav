@@ -9,10 +9,9 @@ deploy:
   app: travv
   on:
     repo: chiawei-chua/trav
-  run: 
-    - bundle exec rake db:create
-    - bundle exec rake
 
 before_script:
 - bundle exec rake db:create
 
+notifications:
+  email: false
