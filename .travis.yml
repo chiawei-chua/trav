@@ -10,7 +10,9 @@ deploy:
   on:
     repo: chiawei-chua/trav
 
+before_install:
+  - gem update --system
+  - gem --version
+
 before_script:
-  - psql -c 'create database TravComList_development;' -U postgres
-  - psql -c 'create database TravComList_test;' -U postgres
-  - psql -c 'create database TravComList_production;' -U postgres
+  - cp config/database.yml.travis config/database.yml
