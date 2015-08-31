@@ -12,3 +12,6 @@ deploy:
   app: travv
   on:
     repo: chiawei-chua/trav
+
+before_script:
+  - psql -c 'create database TravComList_Test;' -U postgres
