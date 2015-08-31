@@ -1,0 +1,182 @@
+// Place all the styles related to the listings controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'globals';
+
+footer.theme {
+  display: none;
+}
+
+/* Page */
+@media screen and (max-width: $mobile) {
+  .sidebar-right {
+    display: none;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .fixed {
+    position: fixed;
+  }
+  
+  .sidebar-left {
+    overflow-y: scroll;
+    bottom: 0;
+    left: 0;
+    top: 65px;
+  }
+
+  .sidebar-right {
+    bottom: 0;
+    top: 65px;
+    right: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+/* Listing */
+.listing.card.medium .card-image {
+  height: 280px;
+}
+
+.card .card-image .card-day {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+}
+
+.card .card-image .card-price {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
+}
+
+.card .card-price,
+.card .card-day {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.listing .card-price,
+.listing .card-day {
+  font-size: 1.5em;
+  background: rgba(0,0,0,0.3);
+  padding: 10px 0;}
+
+.listing .card-content .card-description {
+  color: black;
+  height: 3em;
+  overflow: hidden;
+  word-wrap: nowrap;
+  text-overflow: ellipsis;
+}
+
+.listing .card-content .card-title {
+  font-size: 1.5em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.listing .card-image img{
+  height: 100%;
+}
+
+
+/* ShortList and Deals */
+div.col.sidebar-right {
+  padding: 0;
+}
+
+/* Shortlist */
+.shortlist .header {
+  text-align: center;
+}
+
+.shortlist .collection {
+  margin: 2% 0 0 0;
+}
+
+.collection .secondary-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.shortlist .list {
+  height: 140px;
+  position: relative;
+}
+
+.list p {
+  margin: 0;
+}
+
+.shortlist .list .day {
+
+}
+
+.shortlist .list .title {
+  font-size:1.2em; 
+  font-weight: bold;
+  margin: 0.5em 0;
+}
+
+.shortlist .list .price {
+  
+}
+
+.shortlist .list .description {
+  margin: 0.5em 0;
+}
+
+/* Deals */
+.deals {
+  max-height: 200px;
+  padding: 10px;
+}
+
+
+/* Listing Overlay */
+.listing-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.2);
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  padding-top: 100px;
+}
+
+.listing-overlay .content-wrapper {
+  padding: 0 10% 5% 10%;
+  height: 100%;
+}
+
+.listing-overlay .content-wrapper .content {
+  background: white;
+  height: 100%;
+  width: 100%;
+  min-width: 380px;
+  min-height: 550px;
+}
+
+@media screen and (max-width: $mobile) {
+  .listing-overlay .content-wrapper {
+    padding: 0 3% 3% 3%;
+  }
+}
+
+
+

@@ -1,0 +1,104 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require jquery-ui
+ *= require font-awesome
+ */
+
+@import "materialize";
+
+/* mixins */
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+/* debug info */
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* Grid */
+
+@media only screen and (min-width: 1640px) { 
+  .row .col.xl1 {
+    width: 8.33333%;
+    margin-left: 0;
+  }
+  .row .col.xl2 {
+    width: 16.66667%;
+    margin-left: 0;
+  }
+  .row .col.xl3 {
+    width: 25%;
+    margin-left: 0;
+  }
+  .row .col.xl4 {
+    width: 33.33333%;
+    margin-left: 0;
+  }
+  .row .col.xl5 {
+    width: 41.66667%;
+    margin-left: 0;
+  }
+  .row .col.xl6 {
+    width: 50%;
+    margin-left: 0;
+  }
+  .row .col.xl7 {
+    width: 58.33333%;
+    margin-left: 0;
+  }
+  .row .col.xl8 {
+    width: 66.66667%;
+    margin-left: 0;
+  }
+  .row .col.xl9 {
+    width: 75%;
+    margin-left: 0;
+  }
+  .row .col.xl10 {
+    width: 83.33333%;
+    margin-left: 0;
+  }
+  .row .col.xl11 {
+    width: 91.66667%;
+    margin-left: 0;
+  }
+  .row .col.xl12 {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.page-footer, .navbar-fixed {
+  z-index: 9999;
+}
+
+.theme {
+  background-color: #ee6e73;
+  color: white;
+}
+
+.font-white {
+  color: white;
+}
+
+
+

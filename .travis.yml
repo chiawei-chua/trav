@@ -1,0 +1,14 @@
+language: ruby
+rvm:
+- 2.0.0
+- 1.9.3
+- jruby-19mode
+- rbx-2
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: U7+nAvBELXeDfu00byGG00/iOJLpPrdyT+hNhqDp+Z6pCZDPms9p7078FFa83bGgCqayyJ4zE66k28plkb1im0beMBnck0UNr8Cup4JGU8OS3cdHt6ZUd2TV/E/T+rz+4gFzjjI/t6U3p6TJsogMfLqCQ3utRSreq0QiLo0kNWWGKEB+iNsk2qWpC8sCh4xIRPF/IFsTeDCRFbDwAzhOCHF2mgU5vBFgVRxGv5wWa3dGb3eiPNzsho+J5pr9XOk9CikJAMJjIUJSt1VmV4qGIutaaDdJFpXRoaMlhSR7jk0IkU6MdqUmodVT8P0Foh9oy9rxRoTP4+8KUOvJrENtrl+XYFBO3bxL6z653bKTBQuR8huL59p/O34O5cdUcPWa72XvsPtjW2BY/meF0U+UkgYvqYAbFbptUoZDatTpK8DFp8UD5j5DIhPmo7MTTNcoJDKzLMz6z8YVFzjwC5yz70MISix6xCWp6Lxon2ceSPEJ24AWJUb95Mvwx+Cec/Xi6uEBql/VT0idpydcCN17uMrRAl9EAfjkzJ5T6nSebkCb9CJPFbAoNhL/BMP3rqzMzGhUSFPNUyMMxWBwkK6r0IgApxsO8/z0rAK6K0L0060SHK9VrSWMYHGk4vr2xkeg59znhi10vjih7fO96c+uXe8+HWzrQUSatAKAoMvfjp0=
+  app: travv
+  on:
+    repo: chiawei-chua/trav

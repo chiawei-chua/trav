@@ -1,0 +1,152 @@
+<% provide(:title, " Listings") %>
+
+<!-- Contents -->
+<div class="listing-page">
+  <div class="row">
+    <div class="col s12 l9 fixed sidebar-left">
+
+      <!-- Filters -->
+
+      <!-- Date Period -->
+      <div class="col s12" id="filters">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">today</i>
+          <input type="date" class="datepicker">
+          <label for="icon_prefix">Start Date</label>
+        </div>
+
+        <div class="input-field col s6">
+          <i class="material-icons prefix">today</i>
+          <input type="date" class="datepicker">
+          <label for="icon_prefix">End Date</label>
+        </div>
+        <!-- End of Date Period -->
+
+        <!-- Price Range -->
+        <div class="col s12">
+          <p class="range-field">
+            <i class="material-icons prefix">today</i>
+            <label for="icon_prefix">Price Range</label>
+            <!-- <input type="range" id="test5" min="0" max="100" /> -->
+            <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+            <div id="slider-range"></div>
+          </p>
+        </div>
+        <!-- End of Price Range -->
+
+        <!-- Location -->
+        <div class="col s12">
+        <label>Destination</label>
+        <select class="browser-default">
+          <option value="" disabled selected>Choose your destinations</option>
+          <option value="1">Simei</option>
+          <option value="2">Tampines</option>
+          <option value="3">Pasir Ris</option>
+        </select>
+        </div>
+        <!-- End of Location -->
+        <!-- End of Filters -->
+
+        <!-- Search -->
+        <div class="input-field col s12">
+          <input id="search" type="search" required>
+          <label for="search"><i class="material-icons">search</i> What is your destination?</label>
+        </div>
+      </div>
+      <!-- End of Search -->
+
+      <!-- Chan Brother's Listing -->
+      <% @listings.each do |list| %>
+        <div class="col s12 m6">
+          <div class="listing card medium hoverable">
+            <div class="clickable" data-link="<%= list.id %>">
+              <div class="card-image waves-effect waves-block waves-light">
+                <%= image_tag("room1.jpg") %>
+                <span class="card-day"> <%= list.title.split(" ").first %> </span>
+                <span class="card-price"> $<%= list.price %></span>
+              </div>
+              <div class="card-content">
+                <p class="card-title">
+                  <%= list.title %>
+                </p>
+                <p class="card-description truncate">
+                  <%= list.description %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <!-- End of Listing -->
+    </div> <!-- End of Col -->
+
+    <div class="col l3 sidebar-right fixed">
+      <div class="shortlist">
+        <h5 class="header">Shortlist</h5>
+        <div class="divider"></div>
+  <!--         <div class="list">
+            <p class="title">I love Taiwan</p>
+          </div>
+          <div class="list">
+          
+          </div>
+          <div class="list">
+          
+          </div> -->
+        <ul class="collection">
+          <li class="collection-item dismissable">
+            <div class="list">
+              <p class="day">8 Days</p>
+              <p class="truncate title">I love Taiwan</p>
+              <p class="price">$8888</p>
+              <p class="truncate description">Pingxi Sky lantern, Jingtong station, Jiufen, Experience High-Speed rail, Taipei 101, Raohe night, Taroko Gorge National Park, Shanbanqiao Culture Centre, At hot spring resort, Fo Guang Shan , Da Theme Park, Sun Moon Lake, Lake of Heaven, Anping Street, Feng Chia night market</p>
+              <span href="#!" class="secondary-content"><i class="fa fa-times"></i></span>
+            </div>
+          </li>
+          <li class="collection-item dismissable">
+            <div class="list">
+              <p class="day">8 Days</p>
+              <p class="truncate title">I love Taiwan</p>
+              <p class="price">$8888</p>
+              <p class="truncate description">Pingxi Sky lantern, Jingtong station, Jiufen, Experience High-Speed rail, Taipei 101, Raohe night, Taroko Gorge National Park, Shanbanqiao Culture Centre, At hot spring resort, Fo Guang Shan , Da Theme Park, Sun Moon Lake, Lake of Heaven, Anping Street, Feng Chia night market</p>
+              <span href="#!" class="secondary-content"><i class="fa fa-times"></i></span>
+            </div>
+          </li>
+          <li class="collection-item dismissable">
+            <div class="list">
+              <p class="day">8 Days</p>
+              <p class="truncate title">I love Taiwan</p>
+              <p class="price">$8888</p>
+              <p class="truncate description">Pingxi Sky lantern, Jingtong station, Jiufen, Experience High-Speed rail, Taipei 101, Raohe night, Taroko Gorge National Park, Shanbanqiao Culture Centre, At hot spring resort, Fo Guang Shan , Da Theme Park, Sun Moon Lake, Lake of Heaven, Anping Street, Feng Chia night market</p>
+              <span href="#!" class="secondary-content"><i class="fa fa-times"></i></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="deals">
+        <%= image_tag("advert1.jpg", :class => "responsive-img") %>
+      </div>
+    </div> <!-- End of Col -->
+  </div> <!-- End of Row -->
+</div> <!-- End of Listing Page -->
+
+<div class="listing-overlay">
+  <div class="content-wrapper">
+    <div class="content row">
+      <div class="col l3">
+        <%= image_tag("room1.jpg") %>
+      </div>
+      <div class="col l9">
+        <p>
+          TEST
+        </p>
+          Test
+        <p>
+        </p>
+          123
+        <p>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
