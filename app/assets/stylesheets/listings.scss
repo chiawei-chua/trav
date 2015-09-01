@@ -41,6 +41,10 @@ footer.theme {
 }
 
 /* Listing */
+#items .listing.card.medium {
+  height: 450px;
+}
+
 .listing.card.medium .card-image {
   height: 280px;
 }
@@ -157,6 +161,7 @@ div.col.sidebar-right {
   height: 100%;
   z-index: 10;
   padding-top: 80px;
+  display: none;
 }
 
 .listing-overlay .content {
@@ -208,6 +213,7 @@ div.col.sidebar-right {
   text-align: center;
   color: $theme_color;
 }
+
 
 
 

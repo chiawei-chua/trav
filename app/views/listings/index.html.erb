@@ -57,9 +57,9 @@
 
       <!-- Chan Brother's Listing -->
       <% @listings.each do |list| %>
-        <div class="col s12 m6">
-          <div class="listing card medium hoverable">
-            <div class="clickable" data-link="<%= list.id %>">
+        <div class="col s12 m6" id="items">
+          <div class="listing card medium hoverable clickable" data-link="<%= list.id %>">
+
               <div class="card-image waves-effect waves-block waves-light">
                 <%= image_tag("room1.jpg") %>
                 <span class="card-day"> <%= list.title.split(" ").first %> </span>
@@ -73,7 +73,12 @@
                   <%= list.description %>
                 </p>
               </div>
-            </div>
+                        <div class="card-action">
+                <a href="#">Compare</a>
+                <a href="#">More Info</a>
+              </div>
+    
+
           </div>
         </div>
       <% end %>
@@ -139,24 +144,24 @@
       </div>
       <div class="card-content">
         <h5 class="title">
-          6D4N Sydney, Hunter Valley And Port Stephens
+          <span class="text"></span>
         </h5>
         <div class="col s6">
           <p class="dura">
-            Duration: <strong>6D2N</strong>
+            Duration: <strong><span class="text"></span></strong>
           </p>
         </div>
         <div class="col s6">
           <p class="price">
-            Price: <strong>$1788</strong>
+            Price: <strong><span class="text"></span></strong>
           </p>
         </div>
         <p class="desc">
-          1 Oct 2014 to 31 Mar 2016, SGD1,788.00/PAX
+          <span class="text"></span>
         </p>
       </div>
       <div class="card-action">
-        <a href="#">Add to Shortlist</a>
+        <a href="#">Compare</a>
         <a href="#">More Info</a>
       </div>
     </div>

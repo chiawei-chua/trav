@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class WelcomeControllerTest < ActionController::TestCase
+class HomeControllerTest < ActionController::TestCase
 	
 	# Setup method before tests
 	def setup
