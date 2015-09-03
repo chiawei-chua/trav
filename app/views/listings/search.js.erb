@@ -1,2 +1,2 @@
 $("#listings-grid").html("<%= escape_javascript(render partial: 'listing_items', 
-	collection: @listings_all, as: :list) %>");
+	collection: @selected, as: :list) %>");

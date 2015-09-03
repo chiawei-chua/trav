@@ -14,11 +14,13 @@ class ListingsController < ApplicationController
   end
 
   def search
-    if params[:search].blank?
-      @selected = Listing.where(["listing.title like :search", { search: "%#{params[:search]}%" }])
-    else 
-      @selected = Listing.all 
-    end
+    price = params[:price].gsub('$','').split(' - ')
+
+    @selected = Listing.where("(title like ? OR description like ?) AND (price > ? AND price < ?)", 
+      "%"+params[:search]+"%", 
+      "%"+params[:search]+"%",
+      price.first,
+      price.last );
 
     respond_to do |format|
       format.js
