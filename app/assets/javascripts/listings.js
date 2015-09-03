@@ -3,7 +3,10 @@
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 (function(){
 
-$(document).ready(function (){
+$(document).ready(init);
+$(document).on('page:load', init);
+
+function init(){
   var M_COMPARE_EXPANDED = false;
   var ANIM_LOCK = false;
 
@@ -101,7 +104,6 @@ $(document).ready(function (){
       }
     }
   });
-});
-
+}
 
 })();

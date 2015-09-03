@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/listings/search' => 'listings#search'
   get '/listings/compare' => 'listings#compare'
   get '/listings/uncompare' => 'listings#uncompare'
+  get '/listings/homesearch' => "listings#home_search"
   resources :listings
 
   

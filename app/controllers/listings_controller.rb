@@ -54,6 +54,25 @@ class ListingsController < ApplicationController
     end
   end
 
+  def home_search
+    if params[:price].nil?
+      price = [0, 5000]
+    else
+      price = params[:price].gsub('$','').split(' - ')
+    end
+
+    @listings_all = Listing.where("(title like ? OR description like ?) AND (price > ? AND price < ?)", 
+      "%"+params[:search]+"%", 
+      "%"+params[:search]+"%",
+      price.first,
+      price.last );
+    
+    if session[:current_user_shortlist].length > 0
+      @compare = Listing.find(session[:current_user_shortlist])
+    end
+
+    render 'index'
+  end
 
   def show
     @listing = Listing.find(params[:id])
