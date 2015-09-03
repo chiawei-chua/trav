@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'globals';
+
+section {
+	margin-bottom: 30px;
+}
 
 // -------------- Jumbotron --------------
 .jumbotron {
@@ -63,3 +68,10 @@
 }
 
 // -------------- Jumbotron --------------
+
+.header {
+	text-align: center;
+	color: $theme_color;
+	text-decoration: underline;
+	line-height: 2;
+}

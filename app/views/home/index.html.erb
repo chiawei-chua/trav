@@ -1,36 +1,14 @@
-<div class="jumbotron">
-  <div class="video_container parallax-container">
-    <div id="video" class="parallax"></div>
-    <div class="video_case"></div>
-    <div class="title">
-      <h1> Find Your Perfect Trip </h1>
-    </div>
-    <div class="search_container">
-      <div class="search">
-        <div class="row">
-          <h4 class="search_title"> Search for tour package now </h4>
-          <form class="col s12" action="listings/homesearch">
-            <div class="row">
-              <div class="input-field col s12">
-                <input placeholder="Where do you want to go?" id="search_location" type="text" class="validate" name="search">
-                <label for="search_location">Location</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s6">
-                <label for="start_date">Start Date∂</label>
-                <input type="date" class="datepicker" id="start_date">
-              </div>
-              <div class="input-field col s6">
-                <label for="end_date">End Date</label>
-                <input type="date" class="datepicker" id="end_date">
-              </div>
-            </div>
-            <button class="btn waves-effect waves-light right submit_button" type="submit" name="action">Submit
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- Search -->
+<section id="search">
+  <%= render 'search' %>
+</section>
+<!-- End of Search -->
+
+<!-- Travel Agencies -->
+<section id="agency">
+  <%= render 'agency' %>
+</section>
+
+<div class="deals row">
+  <%= render 'deal' %>
 </div>
