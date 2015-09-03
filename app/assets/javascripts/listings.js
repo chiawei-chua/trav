@@ -4,24 +4,104 @@
 (function(){
 
 $(document).ready(function (){
+  var M_COMPARE_EXPANDED = false;
+  var ANIM_LOCK = false;
+
   $('.datepicker').pickadate({
     selectMonths: true, // Creates a dropdown to control month
     selectYears: 15 // Creates a dropdown of 15 years to control year
   });
 
   $( "#slider-range" ).slider({
-      range: true,
-      min: 0,
-      max: 500,
-      values: [ 75, 300 ],
-      slide: function( event, ui ) {
-        $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-      }
-    });
-    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-      " - $" + $( "#slider-range" ).slider( "values", 1 ) );
-});
+    range: true,
+    min: 0,
+    max: 5000,
+    values: [ 0, 5000 ],
+    slide: function( event, ui ) {
+      $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+    }
+  });
+  $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+    " - $" + $( "#slider-range" ).slider( "values", 1 ) );
 
+  $( "#amount" ).change(function(){
+    $( "#filter-form" ).submit();
+  });
+  $( "#search" ).change(function(e){
+    $( "#filter-form" ).submit();
+  });
+  $( ".datepicker" ).change(function(){
+    $( "#filter-form" ).submit();
+  });
+
+  $( ".listing.card .clickable" ).click(function() {
+    $( ".title .text" ).html($(this).find(".card-title").html());
+    $( ".dura .text" ).html($(this).find(".card-day").html());
+    $( ".price .text" ).html($(this).find(".card-price").html());
+    $( ".desc .text" ).html($(this).find(".card-description").html());
+    $( ".listing-overlay .card-action .compare" ).attr('data-link', 
+      $(this).next().find(".compare").attr('data-link'));
+    $( ".listing-overlay" ).show();
+  });
+
+  $( ".close" ).click(function() {
+    $( ".listing-overlay" ).hide();
+  });
+
+  $( ".compare" ).click(function() {
+    var get = $( this ).attr( "data-link" );
+    $.get( "listings/compare", {id: get});
+  });
+
+  $( ".remove" ).click(function() {
+    $.get('listings/uncompare', {id: $( this ).closest(" li.dismissable ").attr("data-link")});
+  });
+
+  $( window ).resize(function(){
+    if($( this ).width() > 992 ) {
+      $( ".sidebar-right" ).css('right', 0);
+    } else {
+      if ( !M_COMPARE_EXPANDED ) {
+        $( ".sidebar-right" ).css('right', -300);
+      } else {
+        $( ".sidebar-right" ).css('right', 0);
+      }
+    }
+  });
+
+  $( ".handle" ).click(function() {
+    if ( !ANIM_LOCK ) {
+      ANIM_LOCK = true;
+      if ( !M_COMPARE_EXPANDED ) {
+        M_COMPARE_EXPANDED = true;
+        $( ".handle" ).animate({
+          right: "+=300"
+        }, 1000, function() {
+          $( ".handle i" ).removeClass('fa-angle-double-left');
+          $( ".handle i" ).addClass('fa-angle-double-right');
+        });
+        $( ".sidebar-right" ).animate({
+          right: "+=300"
+        }, 1000, function() {
+          ANIM_LOCK = false;
+        });
+      } else {
+        M_COMPARE_EXPANDED = false;
+        $( ".handle" ).animate({
+          right: "-=300"
+        }, 1000, function() {
+          $( ".handle i" ).removeClass('fa-angle-double-right');
+          $( ".handle i" ).addClass('fa-angle-double-left');
+        });
+        $( ".sidebar-right" ).animate({
+          right: "-=300"
+        }, 1000, function() {
+          ANIM_LOCK = false;
+        });
+      }
+    }
+  });
+});
 
 
 })();

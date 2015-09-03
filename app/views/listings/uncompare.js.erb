@@ -1,0 +1,5 @@
+$( "#compare-list" ).find( 'li[data-link="<%= @remove %>"]' ).remove();
+
+if ($( "#compare-list" ).has( "li" ).length <= 0) {
+	$( "#compare-list" ).append("<li class='empty'> There is nothing here :( </li>");
+}

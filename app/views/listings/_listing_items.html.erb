@@ -1,0 +1,23 @@
+<div class="col s12 m6">
+  <div class="listing card medium hoverable">
+    <div class="clickable">
+      <div class="card-image">
+        <%= image_tag("room1.jpg") %>
+        <span class="card-day"> <%= list.title.split(" ").first %> </span>
+        <span class="card-price"> $<%= list.price %></span>
+      </div>
+      <div class="card-content">
+        <p class="card-title">
+          <%= list.title %>
+        </p>
+        <p class="card-description truncate">
+          <%= list.description %>
+        </p>
+      </div>
+    </div>
+    <div class="card-action">
+      <a href="#" class="compare" data-link="<%= list.id %>">Compare</a>
+      <a href="#">More Info</a>
+    </div>
+  </div>
+</div>

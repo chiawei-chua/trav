@@ -1,0 +1,10 @@
+<% if @compare.nil? %>
+<% else %>
+  $( "#compare-list .empty" ).remove();
+  $( "#compare-list" ).append( "<%= escape_javascript(render partial: 'compare', 
+    locals:{list: @compare}) %>" );
+
+  $( ".remove" ).click(function() {
+    $.get('listings/uncompare', {id: $( this ).closest(" li.dismissable ").attr("data-link")});
+  });
+<% end %>

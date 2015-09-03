@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   
   # Listings
   get 'listings' => 'listings#index'
+  get '/listings/search' => 'listings#search'
+  get '/listings/compare' => 'listings#compare'
+  get '/listings/uncompare' => 'listings#uncompare'
   resources :listings
 
   

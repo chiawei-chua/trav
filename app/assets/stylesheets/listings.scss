@@ -11,7 +11,14 @@ footer.theme {
 /* Page */
 @media screen and (max-width: $mobile) {
   .sidebar-right {
-    display: none;
+    display: block;
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    top: 0px;
+    right: 0;
+    z-index: 999;
+    background-color: $theme_color;
   }
 }
 
@@ -41,7 +48,7 @@ footer.theme {
 }
 
 /* Listing */
-#items .listing.card.medium {
+#listings-grid .listing.card.medium {
   height: 450px;
 }
 
@@ -107,7 +114,7 @@ div.col.sidebar-right {
 }
 
 .shortlist .collection {
-  margin: 2% 0 0 0;
+  margin: 0;
 }
 
 .collection .secondary-content {
@@ -115,6 +122,10 @@ div.col.sidebar-right {
   top: 0;
   right: 0;
   cursor: pointer;
+}
+
+.shortlist a {
+  color: $theme_color;
 }
 
 .shortlist .list {
@@ -126,23 +137,82 @@ div.col.sidebar-right {
   margin: 0;
 }
 
-.shortlist .list .day {
-
-}
-
 .shortlist .list .title {
   font-size:1.2em; 
-  font-weight: bold;
+  font-weight: 500;
   margin: 0.5em 0;
-}
-
-.shortlist .list .price {
-  
 }
 
 .shortlist .list .description {
   margin: 0.5em 0;
 }
+
+#compare-list .empty {
+  padding: 30px 0;
+  text-align: center;
+}
+
+.handle {
+  display: none;
+}
+
+@media screen and (max-width: 992px) {
+  .shortlist {
+    margin-top: 80px;
+  }
+
+  .sidebar-right .shortlist a,
+  #compare-list .empty,
+  #compare-list .list p {
+    color: white;
+  }
+
+  #compare-list .remove {
+    color: #D3D3D3;
+  }
+
+  .shortlist .list {
+    height: auto;
+  }
+
+  .list .day,
+  .list .description {
+    display: none;
+  }
+
+  #compare-list li {
+    background-color: $theme_color;
+  }
+
+  /*** Compare Handle ***/
+  .handle {
+    position: fixed;
+    right: 280px;
+    top: 50%;
+  }
+
+  .handle i {
+    font-size: 3.5em;
+    border: 1px solid white;
+    border-radius: 50%;
+    background-color: $theme_color;
+    color: white;
+    width: 53px;
+    height: 53px;
+    text-align: center;
+  }
+
+  .handle {
+    display: block;
+    right: -20px;
+  }
+
+  .sidebar-right {
+    right: -300px;
+  }
+}
+
+
 
 /* Deals */
 .deals {
@@ -159,7 +229,7 @@ div.col.sidebar-right {
   background: rgba(0,0,0,0.4);
   width: 100%;
   height: 100%;
-  z-index: 10;
+  z-index: 9999;
   padding-top: 80px;
   display: none;
 }
@@ -194,7 +264,7 @@ div.col.sidebar-right {
 }
 
 .listing-overlay .content .card .card-action a {
-  color: $theme_color;
+  // color: $theme_color;
 }
 
 .close {
@@ -202,7 +272,6 @@ div.col.sidebar-right {
   background: white;
   border: 5px solid $theme_color;
   border-radius: 50%;
-  cursor: pointer;
   right: -12px;
   top: -12px;
   z-index: 10;
@@ -213,7 +282,6 @@ div.col.sidebar-right {
   text-align: center;
   color: $theme_color;
 }
-
 
 
 

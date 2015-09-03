@@ -1,0 +1,38 @@
+<!-- Filters -->
+<%= form_tag('/listings/search', :id => 'filter-form' ,:method => 'get', remote: true) do %> 
+  <!-- Date Period -->
+  <div class="col s12" id="filters">
+    <div class="input-field col s6">
+      <i class="material-icons prefix">today</i>
+      <input type="date" name="start-date" class="datepicker">
+      <label for="icon_prefix">Start Date</label>
+    </div>
+
+    <div class="input-field col s6">
+      <i class="material-icons prefix">today</i>
+      <input type="date" name="end-date" class="datepicker">
+      <label for="icon_prefix">End Date</label>
+    </div>
+    <!-- End of Date Period -->
+
+    <!-- Price Range -->
+    <div class="col s12">
+      <p class="range-field">
+        <i class="material-icons prefix">today</i>
+        <label for="icon_prefix">Price Range</label>
+        <!-- <input type="range" id="test5" min="0" max="100" /> -->
+        <input type="text" id="amount" name="price" readonly style="border:0; color:#f6931f; font-weight:bold;">
+        <div id="slider-range"></div>
+      </p>
+    </div>
+    <!-- End of Price Range -->
+    
+    <!-- Search -->
+    <div class="input-field col s12">
+      <input id="search" type="search" name="search">
+      <label for="search"><i class="material-icons">search</i> What is your destination?</label>
+    </div>
+    <!-- End of Search -->
+  </div>
+<% end %>
+<!-- End of Filters -->
