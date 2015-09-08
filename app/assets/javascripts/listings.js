@@ -15,6 +15,8 @@ function init(){
     selectYears: 15 // Creates a dropdown of 15 years to control year
   });
 
+  $('.materialboxed').materialbox();
+  
   $( "#slider-range" ).slider({
     range: true,
     min: 0,
@@ -44,6 +46,8 @@ function init(){
     $( ".desc .text" ).html($(this).find(".card-description").html());
     $( ".listing-overlay .card-action .compare" ).attr('data-link', 
       $(this).next().find(".compare").attr('data-link'));
+    $( ".listing-overlay .card-action .more-info" ).attr('href', 
+      $(this).next().find(".more-info").attr('href'));
     $( ".listing-overlay" ).show();
   });
 

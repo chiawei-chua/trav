@@ -1,9 +1,6 @@
 require 'test_helper'
 
 class ListingTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
 
   def setup
   	@listing = Listing.new(title: "Test", description: "test", price: 0)

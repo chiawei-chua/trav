@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root 'home#index'
   
+  # Travel
+  get 'travel' => 'travel#index'
+
   # Listings
   get 'listings' => 'listings#index'
   get '/listings/search' => 'listings#search'

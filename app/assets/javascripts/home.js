@@ -6,13 +6,16 @@
 
 (function() {
 
+$(document).ready(init);
+$(document).on('page:load', init);
+
 // Youtube player
 var player;
 
-$(document).ready(function(){
+function init() {
 	loadDatePicker();
 	loadVideo();
-});
+}
 
 // ----------------- Load Datepicker -----------------
 function loadDatePicker() {

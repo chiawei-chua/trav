@@ -1,16 +1,11 @@
 class ListingsController < ApplicationController
+  include CookieManager
   
-  def index
-    if session[:current_user_id].nil? || session[:expires_at] < Time.current
-      session[:current_user_id] = SecureRandom.hex(5)
-      session[:expires_at] = Time.current + 24.hours
-      session[:current_user_shortlist] = []
-    end
+  before_filter :cm_run
 
+  def index
     @listings_all = Listing.all
-    if session[:current_user_shortlist].length > 0
-      @compare = Listing.find(session[:current_user_shortlist])
-    end
+    @compare = Listing.find(cm_shortlist)
   end
 
   def search
@@ -28,14 +23,11 @@ class ListingsController < ApplicationController
   end
 
   def compare
-    if session[:current_user_shortlist].length >= 3 || session[:current_user_shortlist].include?(params[:id])
-      @compare = nil;
-    else 
+    if cm_shortlist_add params[:id]
       @compare = Listing.find(params[:id])
-      session[:current_user_shortlist] << params[:id]
+    else 
+      @compare = nil
     end
-
-    puts "session_shortlist: " + session[:current_user_shortlist].to_s
 
     respond_to do |format|
       format.js
@@ -45,9 +37,7 @@ class ListingsController < ApplicationController
   def uncompare
     @remove = params[:id]
 
-    session[:current_user_shortlist].delete(params[:id])
-
-    puts "session_shortlist: " + session[:current_user_shortlist].to_s
+    cm_shortlist_remove params[:id]
 
     respond_to do |format|
       format.js
@@ -67,8 +57,8 @@ class ListingsController < ApplicationController
       price.first,
       price.last );
     
-    if session[:current_user_shortlist].length > 0
-      @compare = Listing.find(session[:current_user_shortlist])
+    if !cm_shortlist_empty?
+      @compare = Listing.find(cm_shortlist)
     end
 
     render 'index'
