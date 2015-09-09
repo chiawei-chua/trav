@@ -13,24 +13,10 @@ class ListingsControllerTest < ActionController::TestCase
   end
 
   test "should get listings" do
-    get :index
+    get :show, :id => 1
     assert_response :success
     assert_not_nil session[:current_user_id]
-    assert_select "title", "Listings | #{@base_title}"
-  end
-
-  # AJAX tests
-  test "should add to compare if valid" do
-    xhr :get, :compare, :id => 1
-    assert_response :success
-    assert_not_nil session[:current_user_id]
-    assert assigns(:compare)
-  end
-
-  test "should not add to compare if not found" do
-    assert_raises(ActiveRecord::RecordNotFound) do
-      xhr :get, :compare, :id => 2
-    end
+    assert_select "title", "#{@listing.title} | #{@base_title}"
   end
 
 end
