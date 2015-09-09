@@ -4,7 +4,15 @@ class SearchController < ApplicationController
   before_filter :cm_run
 
   def index
-    @search = Listing.all
+    if params[:search].nil?
+      @search = Listing.all
+      @search_params = ""
+    else
+      @search = Listing.where("title like ? OR description like ?", 
+        "%"+params[:search]+"%", "%"+params[:search]+"%");
+      @search_params = params[:search]
+    end
+    
     @shortlist = Listing.find(cm_shortlist)
     puts cm_shortlist.to_s
   end

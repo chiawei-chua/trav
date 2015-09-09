@@ -3,11 +3,6 @@ class ListingsController < ApplicationController
   
   before_filter :cm_run
 
-  def index
-    @listings_all = Listing.all
-    @compare = Listing.find(cm_shortlist)
-  end
-
   def home_search
     if params[:price].nil?
       price = [0, 5000]

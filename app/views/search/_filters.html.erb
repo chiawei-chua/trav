@@ -4,14 +4,14 @@
   <div class="col s12" id="filters">
     <div class="input-field col s6">
       <i class="material-icons prefix">today</i>
-      <input type="date" name="start-date" class="datepicker">
-      <label for="icon_prefix">Start Date</label>
+      <input disabled type="date" name="start-date" class="datepicker">
+      <label for="icon_prefix">Start Date (Disabled) </label>
     </div>
 
     <div class="input-field col s6">
       <i class="material-icons prefix">today</i>
-      <input type="date" name="end-date" class="datepicker">
-      <label for="icon_prefix">End Date</label>
+      <input disabled type="date" name="end-date" class="datepicker">
+      <label for="icon_prefix">End Date (Disabled) </label>
     </div>
     <!-- End of Date Period -->
 
@@ -29,7 +29,7 @@
     
     <!-- Search -->
     <div class="input-field col s12">
-      <input id="search" type="search" name="search">
+      <input id="search" type="search" name="search" value="<%= @search_params %>">
       <label for="search"><i class="material-icons">search</i> What is your destination?</label>
     </div>
     <!-- End of Search -->

@@ -9,6 +9,7 @@ $(document).on('page:load', init);
 function init(){
   var M_COMPARE_EXPANDED = false;
   var ANIM_LOCK = false;
+  var AMOUNT;
 
   $('.datepicker').pickadate({
     selectMonths: true, // Creates a dropdown to control month
@@ -29,9 +30,15 @@ function init(){
   $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
     " - $" + $( "#slider-range" ).slider( "values", 1 ) );
 
-  $( "#amount" ).change(function(){
-    $( "#filter-form" ).submit();
-  });
+  AMOUNT = $("#amount").val();
+  setInterval(amountChanged, 1000);
+  function amountChanged() {
+    if ( $("#amount").val() != AMOUNT ) {
+      AMOUNT = $("#amount").val();
+      $( "#filter-form" ).submit();
+    }
+  }
+
   $( "#search" ).change(function(e){
     $( "#filter-form" ).submit();
   });
