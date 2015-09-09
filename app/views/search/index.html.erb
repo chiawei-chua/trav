@@ -14,7 +14,7 @@
         <a href="compare"><h5 class="header">Compare <i class="fa fa-chevron-right"></i></h5></a>
         <div class="divider"></div>
         <ul class="collection" id="compare-list">
-          <% if @shortlist.nil? %>
+          <% if @shortlist.blank? %>
             <li class="empty"> There is nothing here :( </li>
           <% else %>
             <%= render partial: 'shortlist', collection: @shortlist, as: :list %>
