@@ -1,0 +1,314 @@
+/* line 7, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+footer.theme {
+  display: none;
+}
+
+/* Page */
+@media screen and (max-width: 992px) {
+  /* line 13, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+  .sidebar-right {
+    display: block;
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    top: 0px;
+    right: 0;
+    z-index: 999;
+    background-color: #ee6e73;
+  }
+}
+@media screen and (min-width: 993px) {
+  /* line 26, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+  .fixed {
+    position: fixed;
+  }
+
+  /* line 30, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+  .sidebar-left {
+    overflow-y: scroll;
+    bottom: 0;
+    left: 0;
+    top: 65px;
+  }
+
+  /* line 37, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+  .sidebar-right {
+    bottom: 0;
+    top: 65px;
+    right: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+}
+/* line 46, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+.clickable {
+  cursor: pointer;
+}
+
+/* Listing */
+/* line 51, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+#listings-grid .listing.card.medium {
+  height: 450px;
+}
+
+/* line 55, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+.listing.card.medium .card-image {
+  height: 280px;
+}
+
+/* line 59, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+.card .card-image .card-day {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+}
+
+/* line 66, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+.card .card-image .card-price {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
+}
+
+/* line 73, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+.card .card-price,
+.card .card-day {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+/* line 80, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+.listing .card-price,
+.listing .card-day {
+  font-size: 1.5em;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px 0;
+}
+
+/* line 86, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+.listing .card-content .card-description {
+  color: black;
+  height: 3em;
+  overflow: hidden;
+  word-wrap: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* line 94, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+.listing .card-content .card-title {
+  font-size: 1.5em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* line 101, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+.listing .card-image img {
+  height: 100%;
+}
+
+/* ShortList and Deals */
+/* line 107, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+div.col.sidebar-right {
+  padding: 0;
+}
+
+/* Shortlist */
+/* line 112, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+.shortlist .header {
+  text-align: center;
+}
+
+/* line 116, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+.shortlist .collection {
+  margin: 0;
+}
+
+/* line 120, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+.collection .secondary-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+/* line 127, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+.shortlist a {
+  color: #ee6e73;
+}
+
+/* line 131, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+.shortlist .list {
+  height: 140px;
+  position: relative;
+}
+
+/* line 136, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+.list p {
+  margin: 0;
+}
+
+/* line 140, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+.shortlist .list .title {
+  font-size: 1.2em;
+  font-weight: 500;
+  margin: 0.5em 0;
+}
+
+/* line 146, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+.shortlist .list .description {
+  margin: 0.5em 0;
+}
+
+/* line 150, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+#compare-list .empty {
+  padding: 30px 0;
+  text-align: center;
+}
+
+/* line 155, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+.handle {
+  display: none;
+}
+
+@media screen and (max-width: 992px) {
+  /* line 160, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+  .shortlist {
+    margin-top: 80px;
+  }
+
+  /* line 164, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+  .sidebar-right .shortlist a,
+  #compare-list .empty,
+  #compare-list .list p {
+    color: white;
+  }
+
+  /* line 170, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+  #compare-list .remove {
+    color: #D3D3D3;
+  }
+
+  /* line 174, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+  .shortlist .list {
+    height: auto;
+  }
+
+  /* line 178, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+  .list .day,
+  .list .description {
+    display: none;
+  }
+
+  /* line 183, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+  #compare-list li {
+    background-color: #ee6e73;
+  }
+
+  /*** Compare Handle ***/
+  /* line 188, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+  .handle {
+    position: fixed;
+    right: 280px;
+    top: 50%;
+  }
+
+  /* line 194, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+  .handle i {
+    font-size: 3.5em;
+    border: 1px solid white;
+    border-radius: 50%;
+    background-color: #ee6e73;
+    color: white;
+    width: 53px;
+    height: 53px;
+    text-align: center;
+  }
+
+  /* line 205, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+  .handle {
+    display: block;
+    right: -20px;
+  }
+
+  /* line 210, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+  .sidebar-right {
+    right: -300px;
+  }
+}
+/* Deals */
+/* line 218, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+.deals {
+  max-height: 200px;
+  padding: 10px;
+}
+
+/* Listing Overlay */
+/* line 225, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+.listing-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  padding-top: 80px;
+  display: none;
+}
+
+/* line 237, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+.listing-overlay .content {
+  position: relative;
+  min-width: 400px;
+  max-width: 450px;
+}
+
+/* line 243, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+.listing-overlay .content .dura,
+.listing-overlay .content .price {
+  text-align: center;
+}
+
+/* line 248, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+.listing-overlay .content .card,
+.listing-overlay .content .card .card-content {
+  height: auto;
+}
+
+/* line 253, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+.listing-overlay .card .card-content {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* line 258, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+.listing-overlay .card .card-content p {
+  margin: 15px auto;
+}
+
+/* line 262, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+.listing-overlay .content .card .card-action {
+  position: relative;
+}
+
+/* line 270, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+.close {
+  position: absolute;
+  background: white;
+  border: 5px solid #ee6e73;
+  border-radius: 50%;
+  right: -12px;
+  top: -12px;
+  z-index: 10;
+}
+
+/* line 280, /Users/Wei/Documents/RocktLabs/TravComList/app/assets/stylesheets/search.scss */
+.close i {
+  width: 20px;
+  text-align: center;
+  color: #ee6e73;
+}

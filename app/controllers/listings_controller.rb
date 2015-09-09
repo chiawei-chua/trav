@@ -8,42 +8,6 @@ class ListingsController < ApplicationController
     @compare = Listing.find(cm_shortlist)
   end
 
-  def search
-    price = params[:price].gsub('$','').split(' - ')
-
-    @selected = Listing.where("(title like ? OR description like ?) AND (price > ? AND price < ?)", 
-      "%"+params[:search]+"%", 
-      "%"+params[:search]+"%",
-      price.first,
-      price.last );
-
-    respond_to do |format|
-      format.js
-    end
-  end
-
-  def compare
-    if cm_shortlist_add params[:id]
-      @compare = Listing.find(params[:id])
-    else 
-      @compare = nil
-    end
-
-    respond_to do |format|
-      format.js
-    end
-  end
-
-  def uncompare
-    @remove = params[:id]
-
-    cm_shortlist_remove params[:id]
-
-    respond_to do |format|
-      format.js
-    end
-  end
-
   def home_search
     if params[:price].nil?
       price = [0, 5000]

@@ -1,17 +1,19 @@
 Rails.application.routes.draw do
   root 'home#index'
   
-  # Travel
-  get 'travel' => 'travel#index'
+  # Search
+  get 'search' => 'search#index'
+  get 'search/list' => 'search#list'
+  get 'search/unlist' => 'search#unlist'
+  get 'search/filter' => 'search#search'
 
   # Listings
-  get 'listings' => 'listings#index'
-  get '/listings/search' => 'listings#search'
-  get '/listings/compare' => 'listings#compare'
-  get '/listings/uncompare' => 'listings#uncompare'
-  get '/listings/homesearch' => "listings#home_search"
+  # get 'listings' => 'listings#index'
+  # get '/listings/homesearch' => "listings#home_search"
+  
   resources :listings
 
+  # Compare
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

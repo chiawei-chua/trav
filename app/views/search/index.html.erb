@@ -1,26 +1,26 @@
-<% provide(:title, " Listings") %>
+<% provide(:title, "Search") %>
 
 <!-- Contents -->
 <div class="listing-page">
   <div class="row">
     <div class="col s12 l9 fixed sidebar-left">
-      <%= render 'listings/filters' %>
+      <%= render partial: 'search/filters' %>
       <div id="listings-grid">
-        <%= render partial: 'listing_items', collection: @listings_all, as: :list %>
+        <%= render partial: 'search_result', collection: @search, as: :list %>
       </div>
     </div> <!-- End of Col -->
     <div class="col l3 sidebar-right fixed">
       <div class="shortlist">
-        <a href="#"><h5 class="header">Compare <i class="fa fa-chevron-right"></i></h5></a>
+        <a href="compare"><h5 class="header">Compare <i class="fa fa-chevron-right"></i></h5></a>
         <div class="divider"></div>
         <ul class="collection" id="compare-list">
-          <% if @compare.nil? %>
+          <% if @shortlist.nil? %>
             <li class="empty"> There is nothing here :( </li>
           <% else %>
-            <%= render partial: 'compare', collection: @compare, as: :list %>
+            <%= render partial: 'shortlist', collection: @shortlist, as: :list %>
           <% end %>
         </ul>
-        <%- render 'listings/compare_advert' -%>
+        <%- render partial: 'search/advert' -%>
       </div>
       <div class="handle clickable">
         <i class="fa fa-angle-double-left"></i>
@@ -29,4 +29,4 @@
   </div> <!-- End of Row -->
 </div> <!-- End of Listing Page -->
 
-<%= render 'listings/listing' %>
+<%= render partial: 'overlay' %>
