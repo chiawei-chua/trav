@@ -3,6 +3,11 @@
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 (function(){
 
+$(document).ready(init);
+$(document).on('page:load', init);
 
+function init() {
+  $('ul.tabs').tabs();
+}
 
 })();

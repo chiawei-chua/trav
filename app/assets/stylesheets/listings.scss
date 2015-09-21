@@ -4,284 +4,54 @@
 
 @import 'globals';
 
-footer.theme {
-  display: none;
-}
-
-/* Page */
-@media screen and (max-width: $mobile) {
-  .sidebar-right {
-    display: block;
-    position: fixed;
-    width: 300px;
-    height: 100%;
-    top: 0px;
-    right: 0;
-    z-index: 999;
-    background-color: $theme_color;
-  }
-}
-
-@media screen and (min-width: $desktop) {
-  .fixed {
-    position: fixed;
-  }
-  
-  .sidebar-left {
-    overflow-y: scroll;
-    bottom: 0;
-    left: 0;
-    top: 65px;
-  }
-
-  .sidebar-right {
-    bottom: 0;
-    top: 65px;
-    right: 0;
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
-}
-
-.clickable {
-  cursor: pointer;
-}
-
-/* Listing */
-#listings-grid .listing.card.medium {
-  height: 450px;
-}
-
-.listing.card.medium .card-image {
-  height: 280px;
-}
-
-.card .card-image .card-day {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 20px;
-}
-
-.card .card-image .card-price {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  padding: 20px;
-}
-
-.card .card-price,
-.card .card-day {
-  color: #fff;
-  font-size: 24px;
-  font-weight: 300;
-}
-
-.listing .card-price,
-.listing .card-day {
-  font-size: 1.5em;
-  background: rgba(0,0,0,0.3);
-  padding: 10px 0;}
-
-.listing .card-content .card-description {
-  color: black;
-  height: 3em;
-  overflow: hidden;
-  word-wrap: nowrap;
-  text-overflow: ellipsis;
-}
-
-.listing .card-content .card-title {
-  font-size: 1.5em;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.listing .card-image img{
-  height: 100%;
-}
-
-
-/* ShortList and Deals */
-div.col.sidebar-right {
-  padding: 0;
-}
-
-/* Shortlist */
-.shortlist .header {
-  text-align: center;
-}
-
-.shortlist .collection {
-  margin: 0;
-}
-
-.collection .secondary-content {
-  position: absolute;
-  top: 0;
-  right: 0;
-  cursor: pointer;
-}
-
-.shortlist a {
-  color: $theme_color;
-}
-
-.shortlist .list {
-  height: 140px;
-  position: relative;
-}
-
-.list p {
-  margin: 0;
-}
-
-.shortlist .list .title {
-  font-size:1.2em; 
-  font-weight: 500;
-  margin: 0.5em 0;
-}
-
-.shortlist .list .description {
-  margin: 0.5em 0;
-}
-
-#compare-list .empty {
-  padding: 30px 0;
-  text-align: center;
-}
-
-.handle {
-  display: none;
-}
-
-@media screen and (max-width: 992px) {
-  .shortlist {
-    margin-top: 80px;
-  }
-
-  .sidebar-right .shortlist a,
-  #compare-list .empty,
-  #compare-list .list p {
-    color: white;
-  }
-
-  #compare-list .remove {
-    color: #D3D3D3;
-  }
-
-  .shortlist .list {
-    height: auto;
-  }
-
-  .list .day,
-  .list .description {
-    display: none;
-  }
-
-  #compare-list li {
-    background-color: $theme_color;
-  }
-
-  /*** Compare Handle ***/
-  .handle {
-    position: fixed;
-    right: 280px;
-    top: 50%;
-  }
-
-  .handle i {
-    font-size: 3.5em;
-    border: 1px solid white;
-    border-radius: 50%;
-    background-color: $theme_color;
-    color: white;
-    width: 53px;
-    height: 53px;
-    text-align: center;
-  }
-
-  .handle {
-    display: block;
-    right: -20px;
-  }
-
-  .sidebar-right {
-    right: -300px;
-  }
-}
-
-
-
-/* Deals */
-.deals {
-  max-height: 200px;
-  padding: 10px;
-}
-
-
-/* Listing Overlay */
-.listing-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: rgba(0,0,0,0.4);
+.showcase {
   width: 100%;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  position: relative;
+}
+
+.tabs .tab a.active {
+  color: white;
+  z-index: 2;
+  position: relative
+}
+
+.tabs .indicator {
+  z-index: 1;
   height: 100%;
-  z-index: 9999;
-  padding-top: 80px;
-  display: none;
+  background: $theme_color;
 }
 
-.listing-overlay .content {
-  position: relative;
-  min-width: 400px;
-  max-width: 450px;
+#info {
+  background-color: #f5f5f5;
 }
 
-.listing-overlay .content .dura, 
-.listing-overlay .content .price {
-  text-align: center;
+.logo {
+  width: 100px;
 }
 
-.listing-overlay .content .card,
-.listing-overlay .content .card .card-content {
-  height: auto;
+p label {
+  font-size: 0.9rem;
 }
 
-.listing-overlay .card .card-content {
-  padding-top: 0;
-  padding-bottom: 0;
+.border-top {
+  border-top: 1px dotted #555;
 }
 
-.listing-overlay .card .card-content p {
-  margin: 15px auto;
-}
-
-.listing-overlay .content .card .card-action {
+#iti td {
+  padding: 0 20px;
   position: relative;
 }
 
-.listing-overlay .content .card .card-action a {
-  // color: $theme_color;
-}
-
-.close {
+#iti td .day {
   position: absolute;
-  background: white;
-  border: 5px solid $theme_color;
-  border-radius: 50%;
-  right: -12px;
-  top: -12px;
-  z-index: 10;
+  top: 0;
+  right: 0;
+  font-size: 2em;
+  padding: 30px;
+  background-color: $theme_color;
+  color: white;
 }
-
-.close i {
-  width: 20px;
-  text-align: center;
-  color: $theme_color;
-}
-
-
-

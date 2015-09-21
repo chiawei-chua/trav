@@ -1,6 +1,5 @@
 module CookieManager
 
-
   MAX_SHORTLIST = 3
 
   def cm_run

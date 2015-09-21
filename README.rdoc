@@ -12,6 +12,24 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
+-------
+ Model
+-------
+Listings 
+- title :string
+- description :string
+- price :integer
+- tour_code :string
+- duration :string
+- agency :string
+- expiration_date :date
+- type :string
+- itinenary :json
+- country :string array:true
+- city :string array:true
+- places_of_interest :string array:true
+- brochure_id :string
+- image_id :string
 
 * Database initialization
 

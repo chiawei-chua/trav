@@ -12,7 +12,7 @@ class SearchController < ApplicationController
         "%"+params[:search]+"%", "%"+params[:search]+"%");
       @search_params = params[:search]
     end
-    
+
     @shortlist = Listing.find(cm_shortlist)
     puts cm_shortlist.to_s
   end

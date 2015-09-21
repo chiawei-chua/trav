@@ -1,27 +1,123 @@
 <% provide(:title, @listing.title) %>
 
-<div class="row">
-  <div class="container">
-    <div class="col s12 l7">
-      <h1> <%= @listing.title %> </h1>
-      <p> Period: <%= @listing.title.split().first %>
-      <p> Price: $<%= @listing.price %> </p>
-      <p> <%= @listing.description %> </p>
-      
-      <div class="img-slider">
-        
-      </div>
+<div class="showcase" style="background-image:url('<%= image_url "room1.jpg" %>')">
+</div>
 
-
-      <img class="materialboxed" data-caption="A picture of some deer and tons of trees" width="250" src="http://th01.deviantart.net/fs70/PRE/i/2013/126/1/e/nature_portrait_by_pw_fotografie-d63tx0n.jpg">
-      
-
-
-
-    </div>
-    <div class="col s12 l5">
-
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <h4> <%= @listing.title %> </h4>
     </div>
   </div>
 </div>
 
+<div class="container">
+  <div class="row">
+    <div class="col offset-s4 s8 offset-m8 m4" style="vertical-align: bottom">
+      <ul class="tabs">
+        <li class="tab col s4"><a href="#info">Info</a></li>
+        <li class="tab col s4"><a href="#iti">Iti</a></li>
+        <li class="tab col s4"><a href="#pdf">PDF</a></li>
+      </ul>
+    </div>
+    <div id="info" class="col s12 tab-content">
+      <div class="col s12">
+        <div class="col s8">
+          <p> 
+            <label>Tour type:</label> 
+            <%= @listing.listing_type %> 
+          </p>
+          <p> 
+            <label>Tour code:</label> 
+            <%= @listing.tour_code %> 
+          </p>
+          <p> 
+            <label>Price from:</label> 
+            <% if @listing.price != 0 %>
+              $<%= @listing.price %> 
+            <% else %>
+              Enquire to know more
+            <% end %>
+          </p>
+          <p> 
+            <label>Availability till:</label> 
+            <% if !@listing.expiration_date.blank? %>
+              <%= @listing.expiration_date %> 
+            <% else %>
+              Enquire to know more
+            <% end %>
+          </p>
+          
+          <p> 
+            <a href="<%= @listing.origin_link %>"> Click here for <%= @listing.agency %> page</a>
+          </p>
+        </div>
+
+        <div class="col s4">
+          <p class="center-align"> Brought to you by: </p>
+          <% $logo = get_logo(@listing.agency) %>
+          <p class="center-align"> <%= image_tag($logo, class:"logo") %> </p>
+        </div>
+      </div>
+
+      <div class="col s12">
+        <% if !@listing.description.blank? %>
+          <div class="col s12 border-top">
+            <p class="center-align"> 
+              <label>Descripion:</label>
+            </p>
+            <p>
+              <%= @listing.description %>
+            </p>
+          </div>
+        <% end %>
+
+        <% if !@listing.places_of_interest.to_a.empty? %>
+          <div class="col s12 border-top">
+            <p class="center-align">
+              <label> Highlights: </label>
+            </p>
+            <% @listing.places_of_interest.each do |place| %>
+              <div class="col s6 m4">
+                <p> • <%= place %> </p>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+
+    <div id="iti" class="col s12 tab-content">
+      <% if !@listing.itinenary.to_a.empty? %>
+        <table class="striped">
+          <tbody>
+            <% $i = 1 %>
+            <% @listing.itinenary.each do |key, data| %>
+              <tr>
+                <td>
+                  <span class="day"> Day <%= $i %> </span>
+                  <% data.each do |item, val| %>
+                    <label> <%= item %> </label>
+                    <p> <%= val %> </p>
+                  <% end %>
+                </td>
+              </tr>
+              <% $i+= 1 %>
+            <% end %>
+          </tbody>
+        </table>  
+      <% end %>
+    </div>
+
+    <div id="pdf" class="col s12 tab-content">
+      <% $brochure = get_brochure_eng(@listing.agency, @listing.tour_code) %>
+      <% if has_asset?($brochure) %>
+        <embed src="<%= asset_path($brochure) %>" width="100%" height="800px" type="application/pdf">
+      <% else %>
+        <h6 class="center-align"> There is no pdf file. </h6>
+      <% end %>
+    </div>
+    
+  </div>
+</div>

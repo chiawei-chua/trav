@@ -7,7 +7,15 @@ class SearchControllerTest < ActionController::TestCase
     @base_title = "TravComList"
 
     # Test model of id:1
-    @listing = Listing.new(title: "Test", description: "test", price: 0)
+    @listing = Listing.new(
+      title: "Test", 
+      description: "test", 
+      price: 0,
+      tour_code: "test",
+      duration: 1,
+      agency: "test",
+      country: ["test"],
+      city: ["test"])
     @listing.id = 1
     @listing.save!
   end
