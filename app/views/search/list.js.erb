@@ -1,4 +1,5 @@
 <% if @compare.nil? %>
+
 <% else %>
   $( "#compare-list .empty" ).remove();
   $( "#compare-list" ).append( "<%= escape_javascript(render partial: 'shortlist', 
@@ -7,4 +8,6 @@
   $( ".remove" ).click(function() {
     $.get('search/unlist', {id: $( this ).closest(" li.dismissable ").attr("data-link")});
   });
+
+  Materialize.toast("Added <%= @compare.title %>", 2000);
 <% end %>

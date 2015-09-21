@@ -3,16 +3,12 @@
     <div class="clickable">
       <div class="card-image">
         <%= image_tag("room1.jpg") %>
-        <span class="card-day"> <%= list.duration %>D </span>
+        <span class="card-day"> <%= list.duration %> Days </span>
         <span class="card-price"> fr. $<%= list.price %></span>
       </div>
       <div class="card-content">
-        <p class="card-title">
-          <%= list.title %>
-        </p>
-        <p class="card-description truncate">
-          <%= list.description %>
-        </p>
+        <p class="card-title"> <%= list.title %> </p>
+        <p class="card-description truncate"> <%= list.description %> </p>
       </div>
     </div>
     <div class="card-action">

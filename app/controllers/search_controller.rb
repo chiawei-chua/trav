@@ -53,7 +53,6 @@ class SearchController < ApplicationController
     puts "Session: " + session[:current_user_shortlist].to_s
 
     respond_to do |format|
-      puts format
       format.js
     end
   end

@@ -41,6 +41,10 @@ footer.theme {
     overflow-y: scroll;
     overflow-x: hidden;
   }
+
+  div#toast-container {
+    top: 75%;
+  }
 }
 
 .clickable {
@@ -129,8 +133,12 @@ div.col.sidebar-right {
 }
 
 .shortlist .list {
-  height: 140px;
+  height: 120px;
   position: relative;
+}
+
+.shortlist .collection-item .list div {
+  padding: 0;
 }
 
 .list p {
@@ -141,6 +149,10 @@ div.col.sidebar-right {
   font-size:1.2em; 
   font-weight: 500;
   margin: 0.5em 0;
+}
+
+.shortlist .list .agency .logo {
+  height: 30px;
 }
 
 .shortlist .list .description {
@@ -169,15 +181,6 @@ div.col.sidebar-right {
 
   #compare-list .remove {
     color: #D3D3D3;
-  }
-
-  .shortlist .list {
-    height: auto;
-  }
-
-  .list .day,
-  .list .description {
-    display: none;
   }
 
   #compare-list li {

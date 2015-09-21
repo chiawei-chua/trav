@@ -1,5 +1,12 @@
-$( "#compare-list" ).find( 'li[data-link="<%= @remove %>"]' ).remove();
+var component = $( "#compare-list" ).find( 'li[data-link="<%= @remove %>"]' );
+var title = component.find('.title').html();
+
+component.remove();
 
 if ($( "#compare-list" ).has( "li" ).length <= 0) {
 	$( "#compare-list" ).append("<li class='empty'> There is nothing here :( </li>");
 }
+
+if (title != undefined) {
+  Materialize.toast("Removed " + title, 2000);
+} 

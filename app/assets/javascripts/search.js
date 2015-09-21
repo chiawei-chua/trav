@@ -67,7 +67,8 @@ function init(){
   });
 
   $( ".compare" ).click(function() {
-    var get = $( this ).attr( "data-link" );
+    var component = $( this );
+    var get = component.attr( "data-link" );
     $.get( "search/list", {id: get});
   });
 
