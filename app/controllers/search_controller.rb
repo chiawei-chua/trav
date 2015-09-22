@@ -1,8 +1,4 @@
 class SearchController < ApplicationController
-  include CookieManager
-  
-  before_filter :cm_run
-
   def index
     if params[:search].nil?
       @search = Listing.all
