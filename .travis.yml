@@ -11,6 +11,7 @@ deploy:
     repo: chiawei-chua/trav
 
 before_script:
+- bundle exec rake db:migrate
 - bundle exec rake db:reset
 
 notifications:
